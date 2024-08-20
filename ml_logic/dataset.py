@@ -3,7 +3,7 @@ import shutil
 import numpy as np
 import pandas as pd
 
-from ml_logic import params #TO CHANGE WHEN ARCHITECTURE OK
+from ml_logic.params import *
 
 from tensorflow.keras.utils import image_dataset_from_directory
 
