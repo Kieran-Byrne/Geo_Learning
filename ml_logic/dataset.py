@@ -7,8 +7,8 @@ from ml_logic.params import *
 
 from tensorflow.keras.utils import image_dataset_from_directory
 
-data_dir = os.path.join(PROJECT_PATH, '/data')
-raw_data_path= os.path.join(data_dir, '/compressed_dataset')
+data_dir = os.path.join(PROJECT_PATH, 'data')
+raw_data_path= os.path.join(data_dir, 'compressed_dataset')
 
 def load_dataset(min_count:int =0,
                  max_count:int = 0,
@@ -16,8 +16,8 @@ def load_dataset(min_count:int =0,
                  ):
 
     ''' Create the directory with the wanted data.'''
-
-    dest_path = os.path.join(data_dir, 'temp_data')
+    dest_dir = 'temp_data'
+    dest_path = os.path.join(data_dir, dest_dir)
 
     if os.path.isdir(dest_path):
         shutil.rmtree(dest_path) #remove old temporary directory if existent
@@ -26,7 +26,7 @@ def load_dataset(min_count:int =0,
 
     for dir in os.listdir(raw_data_path):
         if min_count < len(os.listdir(os.path.join(raw_data_path, dir))) < max_count:
-            shutil.copytree(os.path.join(raw_data_path, dir), os.path.join(data_dir, '/temp_data', dir))
+            shutil.copytree(os.path.join(raw_data_path, dir), os.path.join(data_dir, dest_dir, dir))
 
     ''' Create the BatchDataset from the directory.'''
 
