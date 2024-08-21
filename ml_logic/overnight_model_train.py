@@ -26,12 +26,14 @@ def launch_overnight_training(min_count:int =0,
                               batch_size:int=32,
                               epochs:int=50):
 
-    train_ds, val_ds = load_dataset(min_count=min_count,
+    train_ds, val_ds, classes_number = load_dataset(min_count=min_count,
                                     max_count=max_count,
                                     image_resize=image_resize)
 
-    model = initialize_model(kernel_shape=kernel_shape,
-                             regularizer_value=regularizer_value)
+    model = initialize_model(output_layer=classes_number,
+                             kernel_shape=kernel_shape,
+                             regularizer_value=regularizer_value,
+                             )
 
     model = compile_model(model,
                           learning_rate=learning_rate)
@@ -53,4 +55,4 @@ launch_overnight_training(min_count=800,
                           max_count=1200,
                           image_resize=(66,153),
                           kernel_shape=(3,3),
-                          learning_rate=1)
+                          learning_rate=1.0)

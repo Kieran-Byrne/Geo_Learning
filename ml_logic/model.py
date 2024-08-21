@@ -8,7 +8,8 @@ from tensorflow.keras import optimizers
 import matplotlib.pyplot as plt
 
 
-def initialize_model(kernel_shape:tuple=(3,3),
+def initialize_model(output_layer:int,
+                     kernel_shape:tuple=(3,3),
                      regularizer_value:float=0.001
                      ):
 
@@ -20,12 +21,12 @@ def initialize_model(kernel_shape:tuple=(3,3),
     model.add(layers.Conv2D(128, kernel_shape, activation='relu')),
     # model.add(layers.Dropout(0.2))
     model.add(layers.MaxPooling2D(pool_size=(2,2))),
-    model.add(layers.Conv2D(256, kernel_shape, activation='relu')),
-    model.add(layers.MaxPooling2D(pool_size=(2,2))),
+    # model.add(layers.Conv2D(256, kernel_shape, activation='relu')),
+    # model.add(layers.MaxPooling2D(pool_size=(2,2))),
     model.add(layers.Flatten())
     model.add(layers.Dense(32, activation='relu', kernel_regularizer=k_regularizer))
     # model.add(layers.Dropout(0.2))
-    model.add(layers.Dense(6, activation='softmax'))
+    model.add(layers.Dense(output_layer, activation='softmax'))
 
     return model
 

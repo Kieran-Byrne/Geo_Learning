@@ -50,4 +50,8 @@ def load_dataset(min_count:int =0,
         subset = 'validation'
         )
 
-    return train_ds, val_ds
+    '''Get output layer shape for the model'''
+
+    classes_number = len(os.listdir(os.path.join(data_dir, dest_dir)))
+
+    return train_ds, val_ds, classes_number
