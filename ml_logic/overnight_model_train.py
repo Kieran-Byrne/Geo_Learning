@@ -51,8 +51,8 @@ def launch_overnight_training(min_count:int =0,
     plot_training(history)
 
 
-launch_overnight_training(min_count=800,
-                          max_count=1200,
-                          image_resize=(66,153),
-                          kernel_shape=(3,3),
-                          learning_rate=1.0)
+launch_overnight_training(min_count=MIN_COUNT,
+                          max_count=MAX_COUNT,
+                          image_resize=IMAGE_RESIZE,
+                          kernel_shape=KERNEL_SHAPE,
+                          learning_rate=LEARNING_RATE)
