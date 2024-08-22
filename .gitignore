@@ -1,3 +1,8 @@
+.python-version
+First_CNN.ipynb
+data/
+models/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
