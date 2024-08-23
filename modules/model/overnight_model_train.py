@@ -7,15 +7,15 @@ import pickle
 import matplotlib.pyplot as plt
 
 
-from ml_logic.params import *
+from model.params import *
 
 from tensorflow.keras.utils import image_dataset_from_directory
 from tensorflow.keras import models, layers, regularizers
 from tensorflow.keras.layers import Conv2D, AveragePooling2D, Dense, Flatten, Dropout
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras import optimizers
-from ml_logic.dataset import load_dataset
-from ml_logic.model import initialize_model, compile_model, train_model, save_model, save_results, plot_training
+from model.dataset import load_dataset
+from model.model import initialize_model, compile_model, train_model, save_model, save_results, plot_training
 
 def launch_overnight_training(min_count:int =0,
                               max_count:int = 0,
