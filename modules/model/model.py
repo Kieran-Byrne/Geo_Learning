@@ -1,6 +1,6 @@
 import time
 import pickle
-from ml_logic.params import *
+from model.params import *
 from tensorflow.keras import models, layers, regularizers
 from tensorflow.keras.layers import Conv2D, AveragePooling2D, Dense, Flatten, Dropout
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
