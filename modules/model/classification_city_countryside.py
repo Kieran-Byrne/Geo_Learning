@@ -4,7 +4,7 @@ import tensorflow as tf
 
 from tensorflow import keras
 from keras import models
-from keras.models import load_model
+# from keras.models import load_model
 from PIL import Image
 from params import *
 from modules.model.zoning import x9_from_img
@@ -19,7 +19,8 @@ Repeat
 
 
 def city_countryside_classification():
-    model = load_model('20240826-115504.h5')
+    model = CatBoostClassifier()
+    model.load_model(os.path.join(PROJECT_PATH,'modules','model','20240826-174502.cbm')
     data_dir = os.path.join(PROJECT_PATH,'data')
     full_dir =  os.path.join(data_dir,'compressed_dataset')
     biome_dir = os.path.join(data_dir,'biome_data_by_biome')
