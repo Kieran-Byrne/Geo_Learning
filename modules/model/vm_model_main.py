@@ -6,7 +6,7 @@ import pickle
 import matplotlib.pyplot as plt
 
 
-from params import *
+from modules.model.params import *
 
 from tensorflow.keras.utils import image_dataset_from_directory
 from tensorflow.keras import models, layers, regularizers
