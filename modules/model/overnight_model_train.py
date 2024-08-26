@@ -14,8 +14,13 @@ from tensorflow.keras import models, layers, regularizers
 from tensorflow.keras.layers import Conv2D, AveragePooling2D, Dense, Flatten, Dropout
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras import optimizers
+<<<<<<< HEAD
 from modules.dataset import load_dataset
 from modules.model import initialize_model, compile_model, train_model, save_model, save_results, plot_training
+=======
+from modules.model.dataset import load_dataset
+from modules.model.model import initialize_model, compile_model, train_model, save_model, save_results, plot_training
+>>>>>>> f16bb13901f510723693027216490067fbba9a22
 
 def launch_overnight_training(min_count:int =0,
                               max_count:int = 0,
