@@ -15,6 +15,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLRO
 from tensorflow.keras import optimizers
 from dataset import load_dataset
 from vm_model import initialize_model, compile_model, train_model, save_model, save_results, plot_training
+from evaluate import evaluate
 
 import os
 
