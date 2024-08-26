@@ -1,6 +1,6 @@
 import os
 
-PROJECT_PATH = os.getcwd()
+PROJECT_PATH = os.environ.get('PROJECT_PATH')
 
 '''Model params'''
 LEARNING_RATE = 1.0
