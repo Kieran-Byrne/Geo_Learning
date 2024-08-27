@@ -6,7 +6,7 @@ from tensorflow import keras
 from keras import models
 from keras.models import load_model
 from PIL import Image
-from params import *
+from modules.model.params import *
 from modules.model.zoning import x9_from_img
 from skimage import data, io
 from catboost import CatBoostClassifier, Pool
