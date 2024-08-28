@@ -5,15 +5,15 @@ from PIL import Image
 
 
 def x9_from_img(img):
-    img_TL = img[:220,:513]
-    img_TC = img[:220,513:1025]
-    img_TR = img[:220,1025:1537]
-    img_ML = img[220:440,:513]
-    img_MC = img[220:440,513:1025]
-    img_MR = img[220:440,1025:1537]
-    img_BL = img[440:660,:513]
-    img_BC = img[440:660,513:1025]
-    img_BR = img[440:660,1025:1537]
+    img_TL = img[:116,:485]
+    img_TC = img[:116,485:970]
+    img_TR = img[:116,970:1456]
+    img_ML = img[116:232,:485]
+    img_MC = img[116:232,485:970]
+    img_MR = img[116:232,970:1456]
+    img_BL = img[232:350,:485]
+    img_BC = img[232:350,485:970]
+    img_BR = img[232:350,970:1456]
     avg_TL = img_TL.mean(axis=0).mean(axis=0)
     avg_TC = img_TC.mean(axis=0).mean(axis=0)
     avg_TR = img_TR.mean(axis=0).mean(axis=0)
