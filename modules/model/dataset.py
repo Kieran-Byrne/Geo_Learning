@@ -8,11 +8,11 @@ from modules.model.params import *
 from tensorflow.keras.utils import image_dataset_from_directory
 
 data_dir = os.path.join(PROJECT_PATH, 'data')
-raw_data_path= os.path.join(data_dir, 'compressed_dataset')
+raw_data_path= os.path.join(data_dir, 'biome_data_by_biome_cropped/city')
 
 def load_dataset(min_count:int =0,
                  max_count:int = 0,
-                 image_resize:tuple =(66,153)
+                 image_resize:tuple =(70,291)
                  ):
 
     ''' Create the directory with the wanted data.'''
@@ -45,7 +45,7 @@ def load_dataset(min_count:int =0,
         labels='inferred',
         label_mode='int',
         seed=123,
-        image_size=(66,153),
+        image_size=image_resize,
         validation_split=0.3,
         subset = 'validation'
         )
